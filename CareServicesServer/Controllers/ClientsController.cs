@@ -18,7 +18,6 @@ namespace CareServicesServer.Controllers
         }
 
         [HttpGet(Name = "GetClients")]
-        //[Route("GetClients")]
         public IActionResult GetClients()
         {
             var list = db.Clients.ToList();
@@ -26,7 +25,6 @@ namespace CareServicesServer.Controllers
         }
 
         [HttpGet("{Id}")]
-        //[Route("GetClientById/{Id}")]
         public IActionResult GetClientById(int Id)
         {
             var data = db.Clients.FirstOrDefault(x => x.Id == Id);
@@ -43,7 +41,6 @@ namespace CareServicesServer.Controllers
             return Ok(new { data = data, CoronaData = CoronaData, CoronaVaccineData = CoronaVaccineData });
         }
 
-        //[Route("AddClient")]
         [HttpPost(Name = "AddClient")]
         public async Task<IActionResult> AddClient([FromBody] ClientDtoModel ClientDtoModel)
         {
@@ -88,7 +85,6 @@ namespace CareServicesServer.Controllers
             return Ok();
         }
 
-        //[Route("UpdateClient")]
         [HttpPut(Name = "UpdateClient")]
         public IActionResult UpdateClient([FromBody] ClientDtoModel client)
         {
@@ -187,50 +183,6 @@ namespace CareServicesServer.Controllers
             }
             return Ok();
         }
-        //[Route("AddCoronaData")]
-        //[HttpPost(Name = "AddCoronaData")]
-        //public IActionResult AddCoronaData(CoronaData CoronaData)
-        //{
-        //    var res = db.CoronaData.Add(CoronaData);
-        //    db.SaveChanges();
-        //    return Ok(res);
-        //}
-
-        //[Route("UpdateCoronaData")]
-        //[HttpPost(Name = "UpdateCoronaData")]
-        //public IActionResult UpdateCoronaData(CoronaData CoronaData)
-        //{
-        //    var cd = db.CoronaData.FirstOrDefault(x => x.Id == CoronaData.Id);
-        //    if (cd != null)
-        //    {
-        //        cd.PositiveDate = CoronaData.PositiveDate;
-        //        cd.RecoverDate = CoronaData.RecoverDate;
-        //    }
-        //    db.SaveChanges();
-        //    return Ok(cd);
-        //}
-
-        //[Route("AddCoronaVaccineData")]
-        //[HttpPost(Name = "AddCoronaVaccineData")]
-        //public IActionResult AddCoronaVaccineData(CoronaVaccineData CoronaVaccineData)
-        //{
-        //    var res = db.CoronaVaccineData.Add(CoronaVaccineData);
-        //    db.SaveChanges();
-        //    return Ok(res);
-        //}
-
-        //[Route("UpdateCoronaVaccineData")]
-        //[HttpPost(Name = "UpdateCoronaVaccineData")]
-        //public IActionResult UpdateCoronaVaccineDataa(CoronaVaccineData CoronaVaccineData)
-        //{
-        //    var cd = db.CoronaVaccineData.FirstOrDefault(x => x.Id == CoronaVaccineData.Id);
-        //    if (cd != null)
-        //    {
-        //        cd.VaccineManufacturer = CoronaVaccineData.VaccineManufacturer;
-        //        cd.DateReceiptVaccination = CoronaVaccineData.DateReceiptVaccination;
-        //    }
-        //    db.SaveChanges();
-        //    return Ok(cd);
-        //}
+       
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CareServicesServer.Migrations
 {
     [DbContext(typeof(CareServicesDbContext))]
-    [Migration("20221020142420_addTables")]
-    partial class addTables
+    [Migration("20221022195625_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
